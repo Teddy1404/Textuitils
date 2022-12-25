@@ -21,14 +21,14 @@ setText(event.target.value);
    <>
  
 <div className="mb-3">
-<h1>{props.heading}</h1>
-  <textarea className="form-control" value ={text} id="exampleFormControlTextarea1" rows="8" onChange={handlechange}></textarea>
+<h1  style={{color:props.mode==='light'?'black':'white'}}>{props.heading}</h1>
+  <textarea className="form-control" value ={text} id="exampleFormControlTextarea1" rows="8"   style={{backgroundColor:props.mode==='light'?'white':'grey',color:props.mode==='light'?'black':'white'}} onChange={handlechange}></textarea>
 </div>
 <button className="btn btn-primary mx-3" onClick={handleup}>convert to uppercase</button>
 <button className="btn btn-primary mx-3" onClick={handledown}>convert to lowercae</button>
 <button className="btn btn-primary mx-3" onClick={handleclear}>Clear Text</button>
 
-<div className="container">
+<div className="container" style={{color:props.mode==='light'?'black':'white'}}>
     <h1>Text summary</h1>
     <p> {text.split(" ").length} words and {text.length} characters</p>
     <p> {0.008 * text.split(" ").length} minute to read </p>
